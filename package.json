@@ -1,6 +1,6 @@
 {
   "name": "nodehl7",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "description": "NodeJS Library for parsing HL7 Messages",
   "main": "lib/hl7.js",
   "scripts": {
@@ -8,7 +8,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Loksly/node-hl7.git"
+    "url": "git+https://github.com/iHealthLabsEurope/nodehl7.git"
   },
   "keywords": [
     "nodejs",
@@ -17,9 +17,9 @@
   "author": "Loksly",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/Loksly/node-hl7/issues"
+    "url": "https://github.com/iHealthLabsEurope/nodehl7/issues"
   },
-  "homepage": "https://github.com/Loksly/node-hl7#readme",
+  "homepage": "https://github.com/iHealthLabsEurope/nodehl7/blob/master/README.md",
   "devDependencies": {
     "chai": "^3.5.0",
     "encoding": "^0.1.12",
