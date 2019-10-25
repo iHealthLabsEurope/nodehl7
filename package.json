@@ -10,14 +10,16 @@
     "type": "git",
     "url": "git+https://github.com/iHealthLabsEurope/nodehl7.git"
   },
-  "keywords": ["nodejs", "hl7"],
+  "keywords": [
+    "nodejs",
+    "hl7"
+  ],
   "author": "Loksly",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/iHealthLabsEurope/nodehl7/issues"
   },
-  "homepage":
-    "https://github.com/iHealthLabsEurope/nodehl7/blob/master/README.md",
+  "homepage": "https://github.com/iHealthLabsEurope/nodehl7/blob/master/README.md",
   "devDependencies": {
     "chai": "^3.5.0",
     "encoding": "^0.1.12",

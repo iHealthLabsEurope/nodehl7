@@ -77,6 +77,40 @@
 					);
 			});
 
+			it('should be able to parse HL7 2.5 version of files with repetition', function(done) {
+				hl7parser.parseFile(path.join(__dirname, './testfiles/patient1.hl7'), (err, message) => {
+					should(err).not.exist();
+					expect(message).to.have.a.property('segments');
+					expect(message.getValue('PID.F-3.R-1.C-1.S-1')).to.eq('85624')
+					expect(message.getValue('PID.F-3.R-1.C-4.S-1')).to.eq('DPI GRIMOIRE')
+					expect(message.getValue('PID.F-3.R-1.C-5.S-1')).to.eq('PI')
+					done();
+				});
+			});
+			it('should be able to parse HL7 2.5 version of files with repetition and correct value', function(done) {
+				hl7parser.parseFile(path.join(__dirname, './testfiles/patient2.hl7'), (err, message) => {
+					should(err).not.exist();
+					expect(message).to.have.a.property('segments');
+					expect(message.getValue('PID.F-3.R-1.C-1.S-1')).to.eq('1800080888');
+					expect(message.getValue('PID.F-3.R-1.C-4.S-1')).to.eq('MIPIH');
+					expect(message.getValue('PID.F-3.R-1.C-5.S-1')).to.eq('PI');
+					expect(message.getValue('PID.F-3.R-1.C-6.S-1')).to.eq('CHU DE POITIERS');
+					expect(message.getValue('PID.F-3.R-1.C-6.S-2')).to.eq('860014208');
+					expect(message.getValue('PID.F-3.R-1.C-6.S-3')).to.eq('FINEJ');
+					expect(Array.isArray(message.getValue('PID.F-3'))).to.eq(true);
+					expect(message.getValue('PID.F-11.R-1')).to.eq(null);
+					done()
+				});
+			});
+			it('should be able to parse HL7 2.5 version of files with pv1 segment', function(done) {
+				hl7parser.parseFile(path.join(__dirname, './testfiles/patient4.hl7'), (err, message) => {
+					should(err).not.exist();
+					expect(message).to.have.a.property('segments');
+					expect(message.getValue('PV1.F-3.R-1.C-4.S-2')).to.eq('860014208');
+					expect(message.getValue('PV1.F-3.R-1.C-1.S-1')).to.eq('4400');
+					done()
+				});
+			})
 			after(function(){
 
 			});
